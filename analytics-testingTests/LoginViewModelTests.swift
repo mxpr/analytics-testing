@@ -43,7 +43,7 @@ class LoginViewModelTests: XCTestCase {
     
     // MARK: - Helpers
     
-    func verifyScreenViewAnalytics(screen: String, when block:(()->Void), line: UInt = __LINE__, file: String = __FILE__) {
+    func verifyScreenViewAnalytics(screen: String, when block:(()->Void), line: UInt = #line, file: StaticString = #file) {
         
         // setup expectations
         let e = expectationWithDescription("screen view analytics should be logged")
@@ -63,7 +63,7 @@ class LoginViewModelTests: XCTestCase {
         }
     }
     
-    func verifyEventAnalytics(event: String, action: String, when block:(()->Void), line: UInt = __LINE__, file: String = __FILE__) {
+    func verifyEventAnalytics(event: String, action: String, when block:(()->Void), line: UInt = #line, file: StaticString = #file) {
         
         // setup expectations
         let e = expectationWithDescription("screen view analytics should be logged")
