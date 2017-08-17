@@ -27,23 +27,23 @@ func ==(lhs: AnalyticsRecord, rhs: AnalyticsRecord) -> Bool {
 // MARK: - AnalyticsEncoder
 
 protocol AnalyticsEncoder {
-    func encode(records: [AnalyticsRecord]) -> String
-    func decode(string: String) -> [AnalyticsRecord]
+    func encode(_ records: [AnalyticsRecord]) -> String
+    func decode(_ string: String) -> [AnalyticsRecord]
 }
 
 // MARK: - JsonAnalyticsEncoder
 
 class JsonAnalyticsEncoder : AnalyticsEncoder {
-    func encode(records: [AnalyticsRecord]) -> String {
+    func encode(_ records: [AnalyticsRecord]) -> String {
         let dictionaryArray = records.map{ $0.dictionary() }
-        let jsonData = try! NSJSONSerialization.dataWithJSONObject(dictionaryArray, options: [])
-        return String(data: jsonData, encoding: NSUTF8StringEncoding)!
+        let jsonData = try! JSONSerialization.data(withJSONObject: dictionaryArray, options: [])
+        return String(data: jsonData, encoding: String.Encoding.utf8)!
     }
     
-    func decode(string: String) -> [AnalyticsRecord] {
-        if let jsonData = string.dataUsingEncoding(NSUTF8StringEncoding),
-            jsonObject = try? NSJSONSerialization.JSONObjectWithData(jsonData, options: []),
-            dictionaryArray = jsonObject as? [[String:String]] {
+    func decode(_ string: String) -> [AnalyticsRecord] {
+        if let jsonData = string.data(using: String.Encoding.utf8),
+            let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
+            let dictionaryArray = jsonObject as? [[String:String]] {
                 return dictionaryArray.flatMap{ AnalyticsRecord(dictionary: $0) }
         }
         return []
@@ -56,8 +56,8 @@ extension AnalyticsRecord {
     
     init?(dictionary: [String : String]) {
         guard let typeString = dictionary["type"],
-            type = AnalyticsRecordType(rawValue: typeString),
-            identifer = dictionary["identifier"] else {
+            let type = AnalyticsRecordType(rawValue: typeString),
+            let identifer = dictionary["identifier"] else {
                 return nil
         }
         

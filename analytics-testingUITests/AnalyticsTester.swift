@@ -28,43 +28,43 @@ class AnalyticsTester {
         return encoder.decode(analyticsDebugger.value as! String)
     }
     
-    func verify(count count: Int,
-        line: UInt = #line,
-        file: StaticString = #file) {
+    func verify(count: Int,
+        file: StaticString = #file,
+        line: UInt = #line) {
             let records = extractAnalytics()
-            XCTAssertEqual(records.count, count, line: line, file: file)
+            XCTAssertEqual(records.count, count, file: file, line: line)
     }
     
     func verify(type occurrence: ItemOccurrence<AnalyticsRecordType>,
-        line: UInt = #line,
-        file: StaticString = #file) {
+        file: StaticString = #file,
+        line: UInt = #line) {
             let records = extractAnalytics()
             let matchingRecords = records.filter{$0.type.rawValue == occurrence.item.rawValue}
-            XCTAssertEqual(matchingRecords.count, occurrence.occurs, line: line, file: file)
+            XCTAssertEqual(matchingRecords.count, occurrence.occurs, file: file, line: line)
     }
     
     func verify(id occurrence: ItemOccurrence<String>,
-        line: UInt = #line,
-        file: StaticString = #file) {
+        file: StaticString = #file,
+        line: UInt = #line) {
             let records = extractAnalytics()
             let matchingRecords = records.filter{$0.identifier == occurrence.item}
-            XCTAssertEqual(matchingRecords.count, occurrence.occurs, line: line, file: file)
+            XCTAssertEqual(matchingRecords.count, occurrence.occurs, file: file, line: line)
     }
     
     func verify(data occurrence: ItemOccurrence<String>,
-        line: UInt = #line,
-        file: StaticString = #file) {
+        file: StaticString = #file,
+        line: UInt = #line) {
             let records = extractAnalytics()
             let matchingRecords = records.filter{$0.data == occurrence.item}
-            XCTAssertEqual(matchingRecords.count, occurrence.occurs, line: line, file: file)
+            XCTAssertEqual(matchingRecords.count, occurrence.occurs, file: file, line: line)
     }
     
     func verify(idAndData occurrence: ItemOccurrence<(id: String, data: String)>,
-        line: UInt = #line,
-        file: StaticString = #file) {
+        file: StaticString = #file,
+        line: UInt = #line) {
             let records = extractAnalytics()
             let matchingRecords = records.filter{ $0.identifier == occurrence.item.id && $0.data == occurrence.item.data}
-            XCTAssertEqual(matchingRecords.count, occurrence.occurs, line: line, file: file)
+            XCTAssertEqual(matchingRecords.count, occurrence.occurs, file: file, line: line)
     }
     
 }

@@ -9,14 +9,14 @@
 import Foundation
 
 protocol Analytics {
-    func log(screen screen:String)
-    func log(event event:String, action: String)
+    func log(screen: String)
+    func log(event: String, action: String)
 }
 
 class GoogleAnalytics : Analytics {
     
     // MARK: Analytics
-    func log(screen screen: String) {
+    func log(screen: String) {
         // replace with calls to google analytics
     
         // tracker.set(kGAIScreenName, value: name)
@@ -24,7 +24,7 @@ class GoogleAnalytics : Analytics {
         // send(builder)
     }
     
-    func log(event event: String, action: String) {
+    func log(event: String, action: String) {
         // replace with calls to google analytics
     
         // let builder = GAIDictionaryBuilder.createEventWithCategory(category, action: action, label: nil, value: nil)
@@ -35,11 +35,11 @@ class GoogleAnalytics : Analytics {
 class ConsoleAnalytics : Analytics {
     
     // MARK: Analytics
-    func log(screen screen: String) {
+    func log(screen: String) {
         print("[analytics] screen view: \(screen)")
     }
     
-    func log(event event: String, action: String) {
+    func log(event: String, action: String) {
         print("[analytics] event: \(event) - action: \(action)")
     }
 }

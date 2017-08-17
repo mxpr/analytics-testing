@@ -28,13 +28,6 @@ class LoginTests: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: - Helpers
-    func launch(app: XCUIApplication) {
-        app.launchArguments = ["-ui-testing","YES"]
-        app.launch()
-    }
-    
-    
     
     // MARK: - Tests
     func testAnalyticsDebuggerExists() {
@@ -63,5 +56,12 @@ class LoginTests: XCTestCase {
         analyticsTester.verify(type: ItemOccurrence(item:AnalyticsRecordType.Event, occurs:2))
         analyticsTester.verify(idAndData: ItemOccurrence(item:(AnalyticsEvents.SignUp, AnalyticsActions.Tap), occurs:1))
     }
+    
+    // MARK: - Helpers
+    func launch(_ app: XCUIApplication) {
+        app.launchArguments = ["-ui-testing","YES"]
+        app.launch()
+    }
+    
     
 }
