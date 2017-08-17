@@ -15,23 +15,23 @@ class LoginViewController: UIViewController {
     
     // MARK: UIViewController overrides
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel?.wakeup()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewModel?.sleep()
     }
 
     // MARK: - Actions
     
-    @IBAction func didTapLogin(sender: UIButton) {
+    @IBAction func didTapLogin(_ sender: UIButton) {
         viewModel?.login()
     }
     
-    @IBAction func didTapSignUp(sender: UIButton) {
+    @IBAction func didTapSignUp(_ sender: UIButton) {
         viewModel?.signup()
     }
     
