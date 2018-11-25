@@ -19,8 +19,8 @@
 		13EB8A2A1CB113EB00772AC0 /* AnalyticsDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A291CB113EB00772AC0 /* AnalyticsDebugger.swift */; };
 		13EB8A2C1CB114C200772AC0 /* TestingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A2B1CB114C200772AC0 /* TestingConstants.swift */; };
 		13EB8A2D1CB1153000772AC0 /* TestingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A2B1CB114C200772AC0 /* TestingConstants.swift */; };
-		13EB8A2F1CB115A700772AC0 /* AnalyticsEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A2E1CB115A700772AC0 /* AnalyticsEncoder.swift */; };
-		13EB8A301CB11C6900772AC0 /* AnalyticsEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A2E1CB115A700772AC0 /* AnalyticsEncoder.swift */; };
+		13EB8A2F1CB115A700772AC0 /* AnalyticsCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A2E1CB115A700772AC0 /* AnalyticsCoder.swift */; };
+		13EB8A301CB11C6900772AC0 /* AnalyticsCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A2E1CB115A700772AC0 /* AnalyticsCoder.swift */; };
 		13EB8A311CB124D800772AC0 /* AnalyticsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A271CB1119900772AC0 /* AnalyticsConstants.swift */; };
 		13EB8A331CB1332000772AC0 /* AnalyticsTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A321CB1332000772AC0 /* AnalyticsTester.swift */; };
 		13EB8A341CB1354600772AC0 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB8A151CB109E700772AC0 /* LoginTests.swift */; };
@@ -62,7 +62,7 @@
 		13EB8A271CB1119900772AC0 /* AnalyticsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsConstants.swift; sourceTree = "<group>"; };
 		13EB8A291CB113EB00772AC0 /* AnalyticsDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsDebugger.swift; sourceTree = "<group>"; };
 		13EB8A2B1CB114C200772AC0 /* TestingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingConstants.swift; sourceTree = "<group>"; };
-		13EB8A2E1CB115A700772AC0 /* AnalyticsEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEncoder.swift; sourceTree = "<group>"; };
+		13EB8A2E1CB115A700772AC0 /* AnalyticsCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsCoder.swift; sourceTree = "<group>"; };
 		13EB8A321CB1332000772AC0 /* AnalyticsTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,7 +124,7 @@
 				13EB8A271CB1119900772AC0 /* AnalyticsConstants.swift */,
 				13EB8A291CB113EB00772AC0 /* AnalyticsDebugger.swift */,
 				13EB8A2B1CB114C200772AC0 /* TestingConstants.swift */,
-				13EB8A2E1CB115A700772AC0 /* AnalyticsEncoder.swift */,
+				13EB8A2E1CB115A700772AC0 /* AnalyticsCoder.swift */,
 				1304183B1CB153C20050AEE7 /* LoginViewModel.swift */,
 			);
 			path = "analytics-testing";
@@ -212,16 +212,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = matrixprojects.net;
 				TargetAttributes = {
 					13EB89F11CB109E700772AC0 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1000;
 					};
 					13EB8A051CB109E700772AC0 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1000;
 						TestTargetID = 13EB89F11CB109E700772AC0;
 					};
 					13EB8A101CB109E700772AC0 = {
@@ -284,7 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13EB8A281CB1119900772AC0 /* AnalyticsConstants.swift in Sources */,
-				13EB8A2F1CB115A700772AC0 /* AnalyticsEncoder.swift in Sources */,
+				13EB8A2F1CB115A700772AC0 /* AnalyticsCoder.swift in Sources */,
 				13EB89F81CB109E700772AC0 /* LoginViewController.swift in Sources */,
 				13EB8A2C1CB114C200772AC0 /* TestingConstants.swift in Sources */,
 				13EB89F61CB109E700772AC0 /* AppDelegate.swift in Sources */,
@@ -307,7 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13EB8A311CB124D800772AC0 /* AnalyticsConstants.swift in Sources */,
-				13EB8A301CB11C6900772AC0 /* AnalyticsEncoder.swift in Sources */,
+				13EB8A301CB11C6900772AC0 /* AnalyticsCoder.swift in Sources */,
 				13EB8A331CB1332000772AC0 /* AnalyticsTester.swift in Sources */,
 				13EB8A341CB1354600772AC0 /* LoginTests.swift in Sources */,
 				13EB8A2D1CB1153000772AC0 /* TestingConstants.swift in Sources */,
@@ -357,13 +357,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -402,13 +412,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -427,6 +447,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -440,7 +461,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mxpr.tutorials.analytics-testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -452,7 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mxpr.tutorials.analytics-testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -464,7 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mxpr.tutorials.analytics-testingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/analytics-testing.app/analytics-testing";
 			};
 			name = Debug;
@@ -477,7 +498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mxpr.tutorials.analytics-testingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/analytics-testing.app/analytics-testing";
 			};
 			name = Release;
@@ -489,7 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mxpr.tutorials.analytics-testingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = "analytics-testing";
 				USES_XCTRUNNER = YES;
 			};
@@ -502,7 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mxpr.tutorials.analytics-testingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = "analytics-testing";
 				USES_XCTRUNNER = YES;
 			};

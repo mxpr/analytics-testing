@@ -20,24 +20,24 @@ class AnalyticsDebugger: Analytics {
         return view
     }()
     
-    fileprivate let encoder: AnalyticsEncoder
-    init(encoder: AnalyticsEncoder) {
+    private let encoder: AnalyticsCoder
+    init(encoder: AnalyticsCoder) {
         self.encoder = encoder
     }
     
     // MARK: - Analytics
     func log(screen: String) {
-        let record = AnalyticsRecord(type: .Screen, identifier: screen, data: nil)
-        logRecord(record)
+        let record = AnalyticsRecord(type: .screen, identifier: screen, data: nil)
+        log(record: record)
     }
     
     func log(event: String, action: String) {
-        let record = AnalyticsRecord(type: .Event, identifier: event, data: action)
-        logRecord(record)
+        let record = AnalyticsRecord(type: .event, identifier: event, data: action)
+        log(record: record)
     }
     
     // MARK: - Private
-    fileprivate func logRecord(_ record: AnalyticsRecord) {
+    private func log(record: AnalyticsRecord) {
         var records = encoder.decode(debugView.accessibilityValue ?? "")
         records.append(record)
         debugView.accessibilityValue = encoder.encode(records)

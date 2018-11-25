@@ -9,10 +9,9 @@
 import XCTest
 @testable import analytics_testing
 
-class MockAnalytics : Analytics {
-    
-    var didLogScreen: ((String)->Void)?
-    var didLogEvent: ((_ event:String, _ action:String)->Void)?
+class MockAnalytics: Analytics {
+    var didLogScreen: ((String) -> Void)?
+    var didLogEvent: ((_ event: String, _ action: String) -> Void)?
     
     // MARK: - Analytics
     func log(screen: String) {
@@ -26,8 +25,8 @@ class MockAnalytics : Analytics {
 
 class LoginViewModelTests: XCTestCase {
     
-    var mockAnalytics : MockAnalytics!
-    var viewModel : LoginViewModel!
+    var mockAnalytics: MockAnalytics!
+    var viewModel: LoginViewModel!
     
     override func setUp() {
         super.setUp()
@@ -41,27 +40,26 @@ class LoginViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    
     // MARK: - Tests
     
     func testAnalytics() {
         
-        verifyScreenViewAnalytics(AnalyticsScreens.Login, when: {
-            self.viewModel.wakeup()
+        verifyAnalytics(screen: AnalyticsScreens.Login, when: {
+            viewModel.wakeup()
         })
         
-        verifyEventAnalytics(AnalyticsEvents.Login, action: AnalyticsActions.Tap, when: {
-            self.viewModel.login()
+        verifyAnalytics(event: AnalyticsEvents.Login, action: AnalyticsActions.Tap, when: {
+            viewModel.login()
         })
         
-        verifyEventAnalytics(AnalyticsEvents.SignUp, action: AnalyticsActions.Tap, when: {
-            self.viewModel.signup()
+        verifyAnalytics(event: AnalyticsEvents.SignUp, action: AnalyticsActions.Tap, when: {
+            viewModel.signup()
         })
     }
     
     // MARK: - Helpers
     
-    func verifyScreenViewAnalytics(_ screen: String, when block:(()->Void), line: UInt = #line, file: StaticString = #file) {
+    func verifyAnalytics(screen: String, when block:(()->Void), line: UInt = #line, file: StaticString = #file) {
         
         // setup expectations
         let e = expectation(description: "screen view analytics should be logged")
@@ -81,10 +79,10 @@ class LoginViewModelTests: XCTestCase {
         }
     }
     
-    func verifyEventAnalytics(_ event: String, action: String, when block:(()->Void), line: UInt = #line, file: StaticString = #file) {
+    func verifyAnalytics(event: String, action: String, when block:(()->Void), line: UInt = #line, file: StaticString = #file) {
         
         // setup expectations
-        let e = expectation(description: "screen view analytics should be logged")
+        let e = expectation(description: "event analytics should be logged")
         mockAnalytics.didLogEvent = { loggedEvent, loggedAction in
             e.fulfill()
             XCTAssertEqual(loggedEvent, event, file: file, line: line)
@@ -101,5 +99,4 @@ class LoginViewModelTests: XCTestCase {
             }
         }
     }
-    
 }

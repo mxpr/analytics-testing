@@ -10,7 +10,7 @@ import Foundation
 
 struct LoginViewModel {
     
-    let analytics : Analytics
+    let analytics: Analytics
     
     func wakeup() {
         analytics.log(screen: AnalyticsScreens.Login)

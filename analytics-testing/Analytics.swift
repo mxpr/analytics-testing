@@ -13,7 +13,7 @@ protocol Analytics {
     func log(event: String, action: String)
 }
 
-class GoogleAnalytics : Analytics {
+class GoogleAnalytics: Analytics {
     
     // MARK: Analytics
     func log(screen: String) {
@@ -32,7 +32,7 @@ class GoogleAnalytics : Analytics {
     }
 }
 
-class ConsoleAnalytics : Analytics {
+class ConsoleAnalytics: Analytics {
     
     // MARK: Analytics
     func log(screen: String) {

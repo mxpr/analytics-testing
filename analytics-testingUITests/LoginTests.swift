@@ -9,15 +9,15 @@
 import XCTest
 
 class LoginTests: XCTestCase {
-    var app : XCUIApplication!
-    var analyticsTester : AnalyticsTester!
+    var app: XCUIApplication!
+    var analyticsTester: AnalyticsTester!
     
     override func setUp() {
         super.setUp()
         
         app = XCUIApplication()
         analyticsTester = AnalyticsTester(app: app)
-        launch(app)
+        launch(app: app)
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -27,7 +27,6 @@ class LoginTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
     
     // MARK: - Tests
     func testAnalyticsDebuggerExists() {
@@ -39,29 +38,28 @@ class LoginTests: XCTestCase {
         
         // verify screen view is logged on load
         analyticsTester.verify(count: 1)
-        analyticsTester.verify(type: ItemOccurrence(item:AnalyticsRecordType.Screen, occurs:1))
-        analyticsTester.verify(id: ItemOccurrence(item:AnalyticsScreens.Login, occurs:1))
+        analyticsTester.verify(type: ItemOccurrence(item: .screen, occurs: 1))
+        analyticsTester.verify(id: ItemOccurrence(item: AnalyticsScreens.Login, occurs: 1))
         
         // tap the login button and verify the tap event is logged
         app.buttons[TestingConstants.LoginButton].tap()
         
         analyticsTester.verify(count: 2)
-        analyticsTester.verify(type: ItemOccurrence(item:AnalyticsRecordType.Event, occurs:1))
-        analyticsTester.verify(idAndData: ItemOccurrence(item:(AnalyticsEvents.Login, AnalyticsActions.Tap), occurs:1))
+        analyticsTester.verify(type: ItemOccurrence(item: .event, occurs: 1))
+        analyticsTester.verify(idAndData: ItemOccurrence(item: (AnalyticsEvents.Login, AnalyticsActions.Tap), occurs: 1))
         
         // tap the sign up button and verify the tap event is logged
         app.buttons[TestingConstants.SignUpButton].tap()
         
         analyticsTester.verify(count: 3)
-        analyticsTester.verify(type: ItemOccurrence(item:AnalyticsRecordType.Event, occurs:2))
-        analyticsTester.verify(idAndData: ItemOccurrence(item:(AnalyticsEvents.SignUp, AnalyticsActions.Tap), occurs:1))
+        analyticsTester.verify(type: ItemOccurrence(item: .event, occurs: 2))
+        analyticsTester.verify(idAndData: ItemOccurrence(item: (AnalyticsEvents.SignUp, AnalyticsActions.Tap), occurs: 1))
     }
     
     // MARK: - Helpers
-    func launch(_ app: XCUIApplication) {
-        app.launchArguments = ["-ui-testing","YES"]
+    func launch(app: XCUIApplication) {
+        app.launchArguments = ["-ui-testing", "YES"]
         app.launch()
     }
-    
     
 }
